@@ -1,0 +1,21 @@
+# Mengaktifkan Rewrite Engine
+RewriteEngine On
+
+# Blokir akses langsung ke file konfigurasi config.php
+<Files "config.php">
+    Require all denied
+</Files>
+
+# Blokir akses ke file .htaccess itu sendiri
+<Files ~ "^\.ht">
+    Require all denied
+</Files>
+
+# Blokir akses ke file tersembunyi atau yang dimulai dengan titik
+RewriteRule (^|/)\. - [F]
+
+# Cegah listing direktori untuk keamanan tambahan
+Options -Indexes
+
+# Set file default yang akan dilayani dalam direktori
+DirectoryIndex index.html
