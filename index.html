@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Gambar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .upload-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+
+        .upload-container h2 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .file-input {
+            margin: 20px 0;
+        }
+
+        .file-input input[type="file"] {
+            padding: 10px;
+            background-color: #eeeeee;
+            border: 2px dashed #cccccc;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .file-input input[type="file"]::file-selector-button {
+            display: none;
+        }
+
+        .upload-button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-button:hover {
+            background-color: #0056b3;
+        }
+
+        .upload-button:active {
+            background-color: #00408b;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h2>Unggah Gambar Anda</h2>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <div class="file-input">
+                <label for="image">Pilih gambar untuk diunggah:</label>
+                <input type="file" name="image" id="image">
+            </div>
+            <button type="submit" class="upload-button" name="submit">Upload Image</button>
+        </form>
+    </div>
+</body>
+</html>
